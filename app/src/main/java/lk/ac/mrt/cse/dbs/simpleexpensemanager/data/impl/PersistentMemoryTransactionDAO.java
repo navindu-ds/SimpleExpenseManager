@@ -43,9 +43,8 @@ public class PersistentMemoryTransactionDAO implements TransactionDAO {
         List<Transaction> transactionList = new ArrayList<>();
         SQLiteDatabase db = dbhandler.getReadableDatabase();
 
-        // Cursor cursor = db.query(SQLkeywords.TABLE_TRANSC,
-          //      null,null,null, null, null, null);
-        Cursor cursor = db.rawQuery("SELECT * FROM " + SQLkeywords.TABLE_TRANSC, null);
+         Cursor cursor = db.query(SQLkeywords.TABLE_TRANSC,
+                null,null,null, null, null, null);
 
         while(cursor.moveToNext()) {
             String dateString = cursor.getString(cursor.getColumnIndexOrThrow(SQLkeywords.DATE));
@@ -70,7 +69,6 @@ public class PersistentMemoryTransactionDAO implements TransactionDAO {
         SQLiteDatabase db = dbhandler.getReadableDatabase();
         List<Transaction> limitedTransactionList = new ArrayList<>();
 
-        // Cursor cursor = db.rawQuery("SELECT * FROM " + SQLkeywords.TABLE_TRANSC, null);
         Cursor cursor = db.query(SQLkeywords.TABLE_TRANSC,
                 null, null, null, null, null, null, limit + "");
 

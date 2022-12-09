@@ -26,7 +26,10 @@ public class PersistentMemoryAccountDAO implements AccountDAO {
     public List<String> getAccountNumbersList() {
         List<String> accountNoList = new ArrayList<>();
         SQLiteDatabase db = dbhandler.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT " + SQLkeywords.ACC_NO + " FROM " + SQLkeywords.TABLE_ACC, null);
+
+        String[] columns = {SQLkeywords.ACC_NO};
+        Cursor cursor = db.query(SQLkeywords.TABLE_ACC, columns,
+                null, null, null, null, null);
 
         while (cursor.moveToNext()) {
             accountNoList.add(cursor.getString(0));
@@ -39,7 +42,8 @@ public class PersistentMemoryAccountDAO implements AccountDAO {
     public List<Account> getAccountsList() {
         List<Account> accountList = new ArrayList<>();
         SQLiteDatabase db = dbhandler.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + SQLkeywords.TABLE_ACC, null);
+        Cursor cursor = db.query(SQLkeywords.TABLE_ACC, null,
+                null, null, null, null, null);
 
         while(cursor.moveToNext()) {
             String accountNo = cursor.getString(cursor.getColumnIndexOrThrow(SQLkeywords.ACC_NO));
@@ -56,9 +60,11 @@ public class PersistentMemoryAccountDAO implements AccountDAO {
     @Override
     public Account getAccount(String accountNo) throws InvalidAccountException {
         SQLiteDatabase db = dbhandler.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + SQLkeywords.TABLE_ACC +
-                " WHERE " + SQLkeywords.ACC_NO + " = " + accountNo, null);
+        String selection = SQLkeywords.ACC_NO + " = ?";
+        String[] acc_no = {accountNo};
 
+        Cursor cursor = db.query(SQLkeywords.TABLE_ACC, null,
+                selection, acc_no, null, null, null);
         if (cursor == null) {
             throw new InvalidAccountException("Invalid Account Number");
         } else {

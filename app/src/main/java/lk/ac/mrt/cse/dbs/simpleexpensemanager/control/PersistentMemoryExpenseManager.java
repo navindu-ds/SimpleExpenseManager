@@ -12,7 +12,7 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.Account;
 
 public class PersistentMemoryExpenseManager extends ExpenseManager {
 
-    public PersistentMemoryExpenseManager() {
+    public PersistentMemoryExpenseManager()  {
         setup();
     }
 
