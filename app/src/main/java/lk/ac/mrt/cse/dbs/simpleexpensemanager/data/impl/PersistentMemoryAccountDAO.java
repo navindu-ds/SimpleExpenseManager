@@ -12,14 +12,15 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.ExpenseType;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.sqlhandler.SQLhandler;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.sqlhandler.SQLkeywords;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 public class PersistentMemoryAccountDAO implements AccountDAO {
     private final SQLhandler dbhandler;
 
-    public PersistentMemoryAccountDAO() {
-        dbhandler = SQLhandler.getInstance();
+    public PersistentMemoryAccountDAO(Context context) {
+        dbhandler = SQLhandler.getInstance(context);
     }
 
     @Override

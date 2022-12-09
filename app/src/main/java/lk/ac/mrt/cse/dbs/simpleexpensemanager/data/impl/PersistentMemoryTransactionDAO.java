@@ -1,6 +1,7 @@
 package lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -20,8 +21,8 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.sqlhandler.SQLkeywords;
 public class PersistentMemoryTransactionDAO implements TransactionDAO {
     private final SQLhandler dbhandler;
 
-    public PersistentMemoryTransactionDAO() {
-        dbhandler = SQLhandler.getInstance();
+    public PersistentMemoryTransactionDAO(Context context) {
+        dbhandler = SQLhandler.getInstance(context);
     }
 
     @Override
