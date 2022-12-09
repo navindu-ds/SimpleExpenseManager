@@ -33,7 +33,7 @@ public class InMemoryDemoExpenseManager extends ExpenseManager {
 
     @Override
     public void setup() {
-        /*** Begin generating dummy data for In-Memory implementation ***/
+        /* Begin generating dummy data for In-Memory implementation */
 
         TransactionDAO inMemoryTransactionDAO = new InMemoryTransactionDAO();
         setTransactionsDAO(inMemoryTransactionDAO);
@@ -47,6 +47,6 @@ public class InMemoryDemoExpenseManager extends ExpenseManager {
         getAccountsDAO().addAccount(dummyAcct1);
         getAccountsDAO().addAccount(dummyAcct2);
 
-        /*** End ***/
+        /* End */
     }
 }
