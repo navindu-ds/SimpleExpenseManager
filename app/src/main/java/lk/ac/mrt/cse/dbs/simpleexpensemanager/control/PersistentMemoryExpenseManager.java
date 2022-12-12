@@ -15,7 +15,7 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.Account;
 public class PersistentMemoryExpenseManager extends ExpenseManager {
     private final Context context;
 
-    public PersistentMemoryExpenseManager(Context context) {
+    public PersistentMemoryExpenseManager(Context context) throws ExpenseManagerException{
         this.context = context;
         try {
             setup();

@@ -37,8 +37,6 @@ lk/ac/mrt/cse/dbs/simpleexpensemanager/control/InMemoryDemoExpenseManager.java
 lk/ac/mrt/cse/dbs/simpleexpensemanager/data/impl/PersistentMemoryAccountDAO.java
  lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.PersistentMemoryAccountDAO
  lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.PersistentMemoryAccountDAO$1
-lk/ac/mrt/cse/dbs/simpleexpensemanager/data/impl/PersistentMemoryTransactionDAO.java
- lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.PersistentMemoryTransactionDAO
 lk/ac/mrt/cse/dbs/simpleexpensemanager/data/sqlhandler/SQLhandler.java
  lk.ac.mrt.cse.dbs.simpleexpensemanager.data.sqlhandler.SQLhandler
 lk/ac/mrt/cse/dbs/simpleexpensemanager/ui/MainActivity.java
@@ -46,3 +44,5 @@ lk/ac/mrt/cse/dbs/simpleexpensemanager/ui/MainActivity.java
  lk.ac.mrt.cse.dbs.simpleexpensemanager.ui.MainActivity$SectionsPagerAdapter
 lk/ac/mrt/cse/dbs/simpleexpensemanager/control/PersistentMemoryExpenseManager.java
  lk.ac.mrt.cse.dbs.simpleexpensemanager.control.PersistentMemoryExpenseManager
+lk/ac/mrt/cse/dbs/simpleexpensemanager/data/impl/PersistentMemoryTransactionDAO.java
+ lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.PersistentMemoryTransactionDAO
