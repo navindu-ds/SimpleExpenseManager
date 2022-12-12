@@ -51,7 +51,7 @@ public class PersistentMemoryTransactionDAO implements TransactionDAO {
             String dateString = cursor.getString(cursor.getColumnIndexOrThrow(SQLkeywords.DATE));
             Date date = null;
             try {
-                date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).parse(dateString);
+                date = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).parse(dateString);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
@@ -77,7 +77,7 @@ public class PersistentMemoryTransactionDAO implements TransactionDAO {
             String dateString = cursor.getString(cursor.getColumnIndexOrThrow(SQLkeywords.DATE));
             Date date;
             try {
-                date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).parse(dateString);
+                date = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).parse(dateString);
             } catch (ParseException e) {
                 date = null;
             }
