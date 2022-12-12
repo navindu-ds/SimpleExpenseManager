@@ -75,11 +75,11 @@ public class PersistentMemoryTransactionDAO implements TransactionDAO {
 
         while(cursor.moveToNext()) {
             String dateString = cursor.getString(cursor.getColumnIndexOrThrow(SQLkeywords.DATE));
-            Date date;
+            Date date = null;
             try {
                 date = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).parse(dateString);
             } catch (ParseException e) {
-                date = null;
+                e.printStackTrace();
             }
             String accountNo = cursor.getString(cursor.getColumnIndexOrThrow(SQLkeywords.ACC_NO));
             ExpenseType expType = ExpenseType.valueOf(cursor.getString(cursor.getColumnIndexOrThrow(SQLkeywords.EXP_TYPE)));
